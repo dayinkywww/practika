@@ -47,24 +47,24 @@
    &nbsp;root.config(menu=main_menu)
 4. Функции для работы с файлами
    &nbsp;def open_file():
-    &nbsp;file_path = filedialog.askopenfilename(title='Выбор файла', filetypes=(('Текстовые документы (txt)','*.txt'),))
+   &nbsp;file_path = filedialog.askopenfilename(title='Выбор файла', filetypes=(('Текстовые документы (txt)','*.txt'),))
    &nbsp;if file_path:
-        &nbsp;text_fild.delete('1.0',END)
-        &nbsp;text_fild.insert('1.0', open(file_path, encoding='utf-8').read())
-  &nbsp; def save_file():
-    &nbsp;file_path = filedialog.asksaveasfilename(filetypes=(('Текстовые документы (txt)','*.txt'),))
-    &nbsp;if file_path:
-       &nbsp; with open(file_path,'w', encoding='utf-8') as f:
-            &nbsp;&nbspf.write(text_fild.get('1.0', END))
- 6. Реализация тем оформления
-    &nbsp;view_colors = {
-        &nbsp;'dark': {'text_bg':'black', 'text_fg':'lime', 'cursor':'brown'},
-        &nbsp;'light': {'text_bg':'white', 'text_fg':'black', 'cursor':'#A5A5A' }
-    &nbsp;}
+   &nbsp;text_fild.delete('1.0',END)
+   &nbsp;text_fild.insert('1.0', open(file_path, encoding='utf-8').read())
+   &nbsp; def save_file():
+   &nbsp;file_path = filedialog.asksaveasfilename(filetypes=(('Текстовые документы (txt)','*.txt'),))
+   &nbsp;if file_path:
+   &nbsp; with open(file_path,'w', encoding='utf-8') as f:
+   &nbsp;&nbspf.write(text_fild.get('1.0', END))
+5. Реализация тем оформления
+   &nbsp;view_colors = {
+   &nbsp;'dark': {'text_bg':'black', 'text_fg':'lime', 'cursor':'brown'},
+   &nbsp;'light': {'text_bg':'white', 'text_fg':'black', 'cursor':'#A5A5A' }
+   &nbsp;}
    &nbsp; def change_theme(theme):
-        &nbsp;text_fild['bg'] = view_colors[theme]['text_bg']
-        &nbsp;text_fild['fg'] = view_colors[theme]['text_fg']
-7. Добавление прокрутки
+   &nbsp;text_fild['bg'] = view_colors[theme]['text_bg']
+   &nbsp;text_fild['fg'] = view_colors[theme]['text_fg']
+6. Добавление прокрутки
    &nbsp;scroll = Scrollbar(text_fild, command=text_fild.yview)
    &nbsp;scroll.pack(side=RIGHT, fill=Y)
    &nbsp;text_fild.config(yscrollcommand=scroll.set)
