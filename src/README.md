@@ -27,15 +27,15 @@
 ### Пошаговая реализаций
 
 1. Создание основного окна
-   from tkinter import *
+   &nbsp;from tkinter import *
    
-   root = Tk()
-   root.title('Текстовый редактор')
-   root.geometry('600x700')
+   &nbsp;root = Tk()
+   &nbsp;root.title('Текстовый редактор')
+   &nbsp;root.geometry('600x700')
 
 2. Добавление текстового поля
-   text_fild = Text(root, bg='black', fg='lime',padx=10, pady=10,wrap=WORD)
-   text_fild.pack(expand=1, fill=BOTH)
+   &nbsp;text_fild = Text(root, bg='black', fg='lime',padx=10, pady=10,wrap=WORD)
+   &nbsp;text_fild.pack(expand=1, fill=BOTH)
 3. Реализация меню
    &nbsp;main_menu = Menu(root)
    
@@ -54,8 +54,8 @@
   &nbsp; def save_file():
     &nbsp;&nbsp;file_path = filedialog.asksaveasfilename(filetypes=(('Текстовые документы (txt)','*.txt'),))
     &nbsp;&nbsp;if file_path:
-       &nbsp;&nbsp;&nbsp; with open(file_path,'w', encoding='utf-8') as f:
-            &nbsp;&nbsp;&nbsp;&nbsp;f.write(text_fild.get('1.0', END))
+       &nbsp;&nbsp; with open(file_path,'w', encoding='utf-8') as f:
+            &nbsp;&nbspf.write(text_fild.get('1.0', END))
  5. Реализация тем оформления
     &nbsp;view_colors = {
         &nbsp;&nbsp;'dark': {'text_bg':'black', 'text_fg':'lime', 'cursor':'brown'},
