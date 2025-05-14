@@ -37,37 +37,37 @@
    text_fild = Text(root, bg='black', fg='lime',padx=10, pady=10,wrap=WORD)
    text_fild.pack(expand=1, fill=BOTH)
 3. Реализация меню
-   main_menu = Menu(root)
+   &nbsp;main_menu = Menu(root)
    
-   file_menu = Menu(main_menu, tearoff=0)
-   file_menu.add_command(label='Открыть', command=open_file)
-   file_menu.add_command(label='Сохранить', command=save_file)
-   main_menu.add_cascade(label='Файл', menu=file_menu)
+   &nbsp;file_menu = Menu(main_menu, tearoff=0)
+   &nbsp;file_menu.add_command(label='Открыть', command=open_file)
+   &nbsp;file_menu.add_command(label='Сохранить', command=save_file)
+   &nbsp;main_menu.add_cascade(label='Файл', menu=file_menu)
 
-   root.config(menu=main_menu)
+   &nbsp;root.config(menu=main_menu)
 4. Функции для работы с файлами
-   def open_file():
-    file_path = filedialog.askopenfilename(title='Выбор файла', filetypes=(('Текстовые документы (txt)','*.txt'),))
-    if file_path:
-        text_fild.delete('1.0',END)
-        text_fild.insert('1.0', open(file_path, encoding='utf-8').read())
-   def save_file():
-    file_path = filedialog.asksaveasfilename(filetypes=(('Текстовые документы (txt)','*.txt'),))
-    if file_path:
-        with open(file_path,'w', encoding='utf-8') as f:
-            f.write(text_fild.get('1.0', END))
+   &nbsp;def open_file():
+    &nbsp;&nbsp;file_path = filedialog.askopenfilename(title='Выбор файла', filetypes=(('Текстовые документы (txt)','*.txt'),))
+    &nbsp;&nbsp;if file_path:
+        &nbsp;&nbsp;text_fild.delete('1.0',END)
+        &nbsp;&nbsp;text_fild.insert('1.0', open(file_path, encoding='utf-8').read())
+  &nbsp; def save_file():
+    &nbsp;&nbsp;file_path = filedialog.asksaveasfilename(filetypes=(('Текстовые документы (txt)','*.txt'),))
+    &nbsp;&nbsp;if file_path:
+       &nbsp;&nbsp;&nbsp; with open(file_path,'w', encoding='utf-8') as f:
+            &nbsp;&nbsp;&nbsp;&nbsp;f.write(text_fild.get('1.0', END))
  5. Реализация тем оформления
-    view_colors = {
-        'dark': {'text_bg':'black', 'text_fg':'lime', 'cursor':'brown'},
-        'light': {'text_bg':'white', 'text_fg':'black', 'cursor':'#A5A5A' }
-    }
-    def change_theme(theme):
-        text_fild['bg'] = view_colors[theme]['text_bg']
-        text_fild['fg'] = view_colors[theme]['text_fg']
+    &nbsp;view_colors = {
+        &nbsp;&nbsp;'dark': {'text_bg':'black', 'text_fg':'lime', 'cursor':'brown'},
+        &nbsp;&nbsp;'light': {'text_bg':'white', 'text_fg':'black', 'cursor':'#A5A5A' }
+    &nbsp;}
+   &nbsp; def change_theme(theme):
+        &nbsp;&nbsp;text_fild['bg'] = view_colors[theme]['text_bg']
+        &nbsp;&nbsp;text_fild['fg'] = view_colors[theme]['text_fg']
 6. Добавление прокрутки
-   scroll = Scrollbar(text_fild, command=text_fild.yview)
-   scroll.pack(side=RIGHT, fill=Y)
-   text_fild.config(yscrollcommand=scroll.set)
+   &nbsp;scroll = Scrollbar(text_fild, command=text_fild.yview)
+   &nbsp;scroll.pack(side=RIGHT, fill=Y)
+   &nbsp;text_fild.config(yscrollcommand=scroll.set)
 ## Модификация проекта
 
 
