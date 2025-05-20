@@ -40,7 +40,7 @@
   }
   
   .hero {
-    background: url('фото/1 1.png') no-repeat center center/cover;
+    background: url('фото/ресурсы.png') no-repeat center center/cover;
     height: 93vh;
     display: flex;
     justify-content: center;
@@ -77,14 +77,12 @@
   }
 
   .instr{
-    display: flex;
     justify-content: space-between;
     padding: 50px 10%;
     background: #f8f8f8;
   }
 
   .help{
-    display: flex;
     justify-content: space-between;
     padding: 50px 10%;
     background: #f8f8f8;
@@ -97,18 +95,19 @@
     height: 600px; 
     border: none;
   }
-  .instr-text  .help-text p{
+  .instr-text p  .help-text p{
     margin: auto;
     margin-bottom: 20px;
     font-size: 16px;
     color: #1e1e1e;
   }
-  .instr-text  .help-text h1{
+
+  .instr h2{
     margin: auto;
     margin-bottom: 20px;
     color: #1e1e1e;
   }
-  .instr-text  .help-text h3{
+  .help h2{
     margin: auto;
     margin-bottom: 20px;
     color: #1e1e1e;
